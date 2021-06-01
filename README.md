@@ -4,7 +4,7 @@ NestJS api rest for indoor bike workout
 ## Install
 
 ### Requisites
-    Node
+- Node
 
 `npm i`
 

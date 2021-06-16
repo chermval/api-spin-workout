@@ -5,6 +5,7 @@ NestJS api rest for indoor bike workout
 
 ### Requisites
 - Node
+- Postgres
 
 `npm i`
 
@@ -33,3 +34,4 @@ NestJS api rest for indoor bike workout
 | ACTION | METHOD  | URI               | EXAMPLE               | 
 |--------|---------|-------------------|-----------------------|
 | Validate health of api | `GET`   | `/api/v1/healthcheck` |  http://localhost:3000/api/v1/healthcheck |
+| Get all workouts | `GET`   | `/api/v1/workouts` |  http://localhost:3000/api/v1/workouts |

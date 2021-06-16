@@ -1,7 +1,8 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
+import { Workout } from './workout.entity';
 import { WorkoutsService } from './workouts.service';
 
-@Controller('workouts')
+@Controller('/api/v1/workouts')
 export class WorkoutsController {
 
     constructor(private workoutsService: WorkoutsService){}
@@ -10,5 +11,11 @@ export class WorkoutsController {
     @Get()
     findAll(){
         return this.workoutsService.findAll();
+    }
+
+    //Get workout by id
+    @Get('/:id')
+    findById(@Param('id') id: string ): Promise<Workout> {
+        return this.workoutsService.findById(id);
     }
 }

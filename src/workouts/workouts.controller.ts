@@ -1,4 +1,5 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { CreateWorkoutDto } from './dto/create-workout.dto';
 import { Workout } from './workout.entity';
 import { WorkoutsService } from './workouts.service';
 
@@ -18,4 +19,11 @@ export class WorkoutsController {
     findById(@Param('id') id: string ): Promise<Workout> {
         return this.workoutsService.findById(id);
     }
+
+    //Save workout registry
+    @Post()
+    save(@Body() createWorkoutDto: CreateWorkoutDto): Promise<Workout> {
+        return this.workoutsService.save(createWorkoutDto);
+    }
+    
 }

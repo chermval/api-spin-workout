@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { CreateWorkoutDto } from './dto/create-workout.dto';
 import { Workout } from './workout.entity';
 import { WorkoutsRepository } from './workouts.repository';
 
@@ -25,5 +26,9 @@ export class WorkoutsService {
         }
 
         return workout;
+    }
+
+    save(workoutDto: CreateWorkoutDto): Promise<Workout> {
+        return this.workoutsRepository.saveRecord(workoutDto);
     }
 }

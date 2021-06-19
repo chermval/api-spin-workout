@@ -31,4 +31,13 @@ export class WorkoutsService {
     save(workoutDto: CreateWorkoutDto): Promise<Workout> {
         return this.workoutsRepository.saveRecord(workoutDto);
     }
+
+    async deleteById(id: string): Promise<void> {
+        const result = await this.workoutsRepository.delete(id);
+
+        if (result.affected === 0){ 
+            throw new NotFoundException(`Workout with ID "${id}" not found`);
+        }
+
+    }
 }

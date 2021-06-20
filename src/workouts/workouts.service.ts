@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateWorkoutDto } from './dto/create-workout.dto';
+import { UpdateWorkoutDto } from './dto/update-workout.dto';
 import { Workout } from './workout.entity';
 import { WorkoutsRepository } from './workouts.repository';
 
@@ -36,6 +37,15 @@ export class WorkoutsService {
         const result = await this.workoutsRepository.delete(id);
 
         if (result.affected === 0){ 
+            throw new NotFoundException(`Workout with ID "${id}" not found`);
+        }
+
+    }
+
+    async updateById(id: string, updateWorkoutDto: UpdateWorkoutDto): Promise<void>{
+        const resutlAffected = await this.workoutsRepository.updateRecord(id, updateWorkoutDto);
+
+        if (resutlAffected === 0){ 
             throw new NotFoundException(`Workout with ID "${id}" not found`);
         }
 

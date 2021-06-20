@@ -37,3 +37,4 @@ NestJS api rest for indoor bike workout
 | Get all workouts | `GET`   | `/api/v1/workouts` |  http://localhost:3000/api/v1/workouts |
 | Get workout by Id | `GET`   | `/api/v1/workouts/{id}` |  http://localhost:3000/api/v1/workouts/{id} [1] |
 | Delete workout by Id | `DELETE`   | `/api/v1/workouts/{id}` |  http://localhost:3000/api/v1/workouts/{id} [1] |
+| Update workout by Id | `PUT`   | `/api/v1/workouts/{id}` |  http://localhost:3000/api/v1/workouts/{id} [1] |

@@ -1,9 +1,11 @@
+import { NotFoundException } from "@nestjs/common";
 import { Test } from "@nestjs/testing";
 import { WorkoutsRepository } from "../workouts/workouts.repository";
 import { WorkoutsService } from "../workouts/workouts.service";
 
 const mockWorkoutsRepository = () => ({
     find: jest.fn(),
+    findOne: jest.fn(),
 });
 
 describe('WorkoutsService', () => {
@@ -33,4 +35,21 @@ describe('WorkoutsService', () => {
         });
     });
 
+    describe( 'findById', () => {
+        it('calls WorkoutsService.findById and returns the result', async () => {
+            const mockWorkout = {
+                id: 'id',
+                distance: '120',
+                time: '30',
+                velocity: '14',
+                pulse: '130',
+                date: '2021-06-22',
+            };
+
+            workoutsRepository.findOne.mockResolvedValue(mockWorkout);
+            const result = await workoutsService.findById('id');
+            expect(result).toEqual(mockWorkout);
+        });
+
+    });
 });

@@ -11,6 +11,8 @@ NestJS api rest for indoor bike workout
 
 ## Run the app
 
+Copy or rename ".env.example" file to ".env" and modify the values in file. 
+
 ### Local/Dev
 `npm run start`
 

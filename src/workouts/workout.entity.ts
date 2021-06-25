@@ -1,22 +1,22 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Workout {
-    @PrimaryGeneratedColumn('uuid')
-    id: String;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
-    @Column()
-    distance: String;
+  @Column()
+  distance: string;
 
-    @Column()
-    time: String;
+  @Column()
+  time: string;
 
-    @Column()
-    velocity: String;
+  @Column()
+  velocity: string;
 
-    @Column()
-    pulse: String;
-    
-    @Column()
-    date: String;
+  @Column()
+  pulse: string;
+
+  @Column()
+  date: string;
 }

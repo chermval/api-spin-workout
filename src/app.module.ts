@@ -4,7 +4,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { configValidationschema } from './config.schema';
 import { WorkoutsModule } from './workouts/workouts.module';
 
-
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -20,8 +19,8 @@ import { WorkoutsModule } from './workouts/workouts.module';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       autoLoadEntities: true,
-      synchronize: true
-    })
+      synchronize: true,
+    }),
   ],
 })
 export class AppModule {}

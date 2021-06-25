@@ -1,18 +1,18 @@
-import { IsNotEmpty } from 'class-validator'
+import { IsNotEmpty } from 'class-validator';
 
 export class CreateWorkoutDto {
     @IsNotEmpty()
-    distance: String;
+    distance: string;
 
     @IsNotEmpty()
-    time: String;
+    time: string;
 
     @IsNotEmpty()
-    velocity: String;
+    velocity: string;
 
     @IsNotEmpty()
-    pulse: String; 
+    pulse: string; 
     
     @IsNotEmpty()
-    date: String;
+    date: string;
 }

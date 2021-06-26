@@ -14,7 +14,7 @@ export class WorkoutsService {
 
   async findAll(): Promise<Workout[]> {
     const workouts = await this.workoutsRepository.find({
-      order: { id: 'DESC' },
+      order: { date: 'DESC' },
     });
 
     return workouts;
